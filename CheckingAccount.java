@@ -9,7 +9,7 @@ public class CheckingAccount implements HasMenu{
 	//Create constructors
 	
 	public CheckingAccount(){
-		this.balance = 100d; 
+		this.balance = 1000d; 
 	//	this.start();
 	}//End constructor 
 

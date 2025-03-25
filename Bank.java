@@ -1,11 +1,15 @@
 //Bank.java
 
 import java.util.*;
+import java.io.*;
 
 class Bank implements HasMenu {
 	protected Admin admin = new Admin();
-	protected ArrayList<Customer> customers = new ArrayList<Customer>();
+//	private ArrayList<Customer> customers = new ArrayList<Customer>();
 	
+	class CustomerList extends ArrayList<Customer>{};
+	protected CustomerList customers = new CustomerList();
+
 	public static void main(String[] args){
 		Bank wellsFargo = new Bank();
 		wellsFargo.start();
@@ -43,6 +47,12 @@ class Bank implements HasMenu {
 			
 			if(menuInput.equals("1")){
 			 	System.out.println("Logging in as admin.");
+				if(admin.login()){
+					admin.menu();
+				} 
+				else {
+					System.out.println("Not authorized.");
+				} 
 			} //End login as admin condition
 
 			if(menuInput.equals("2")){
@@ -52,8 +62,10 @@ class Bank implements HasMenu {
 	} //End start()
 	
 	public void loadSampleCustomers(){
-
-	}
+		customers.add(new Customer("Alice", "0000"));
+		customers.add(new Customer("Bob", "0000"));
+		customers.add(new Customer("Cindy", "0000"));
+	} //End loadSampleCustomers()
 
 	public void saveCustomers(){
 

@@ -6,7 +6,7 @@ class SavingsAccount extends CheckingAccount{
 	private double interestRate;
 
 	public static void main(String[] args){
-		SavingsAccount account = new SavingsAccount(100, 0.02);
+		SavingsAccount account = new SavingsAccount(1000, 5);
 		account.start();
 	} //end main test harness
 
