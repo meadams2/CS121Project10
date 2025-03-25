@@ -16,6 +16,12 @@ HasMenu.class: HasMenu.java
 Admin.class: Admin.java
 	javac -g Admin.java
 
+Bank.class: Bank.java HasMenu.class Customer.class Admin.class
+	javac -g Bank.java
+
+testBank: Bank.class
+	java Bank
+
 testAdmin: Admin.class
 	java Admin
 
