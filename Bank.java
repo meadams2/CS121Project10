@@ -48,7 +48,7 @@ class Bank implements HasMenu {
 			if(menuInput.equals("1")){
 			 	System.out.println("Logging in as admin.");
 				if(admin.login()){
-					admin.menu();
+					this.startAdmin();
 				} 
 				else {
 					System.out.println("Not authorized.");
@@ -70,4 +70,7 @@ class Bank implements HasMenu {
 	public void saveCustomers(){
 
 	}
+
+	public void startAdmin(){
+
 } //End class def
