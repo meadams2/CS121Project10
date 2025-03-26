@@ -31,7 +31,7 @@ class Admin extends User {
 	} //End empty start()
 
 	public String getReport(){
-		String report = "Username:" + userName + ", PIN:" + PIN;
+		String report = "Username:" + this.userName + ", PIN:" + this.PIN;
 		return report;
 	} //End getReport
 } //End class def

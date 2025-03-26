@@ -115,6 +115,9 @@ class Bank implements HasMenu {
 
 		while (it.hasNext()){
 			Customer currentCustomer = it.next();
+			
+			//Testing harness to figure out null userName issue
+			//System.out.println(currentCustomer.getUserName());
 			System.out.println(currentCustomer.getReport());
 		} 
 	} //End fullCustomerReport()

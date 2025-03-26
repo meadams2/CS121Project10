@@ -19,14 +19,18 @@ class Customer extends User {
 
 	public Customer(){
 		super("Alice", "0000");
-		this.checking = new CheckingAccount(100d);
-		this.savings = new SavingsAccount(100d, 0.02);
+		this.userName = userName;
+		this.PIN = PIN;
+		this.checking = new CheckingAccount(1000d);
+		this.savings = new SavingsAccount(1000d, 5);
 	} //end constructor
 
 	public Customer(String userName, String sPIN){
 		super(userName, sPIN);
-		this.checking = new CheckingAccount(100d);
-		this.savings = new SavingsAccount(100d, 0.02);
+		this.userName = userName;
+		this.PIN = sPIN;
+		this.checking = new CheckingAccount(1000d);
+		this.savings = new SavingsAccount(1000d, 5);
 //		this.userName = userName;
 //		this.PIN = sPIN;
 	} //End dual parameter constructor
