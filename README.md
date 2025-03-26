@@ -68,8 +68,13 @@ Action:
 Waits for user input. Stores input in menuResponse. Returns menuResponse.
 
 ### applyInterest()
-
+```
+Use an iterator to step through the array list of customers.
+Assign the current iteration of the iterator to currentCustomer.
+Call currentCustomer.savings.calcInterest().
+```
 ### void loginAsCustomer()
 
 ### void startAdmin()
 
+Similar to start() in Menu and Customer. Acts as a traffic controller. 
