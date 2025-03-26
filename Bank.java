@@ -72,5 +72,53 @@ class Bank implements HasMenu {
 	}
 
 	public void startAdmin(){
+		boolean keepGoing = true;
+		while(keepGoing){
+			String menuResponse = admin.menu();
+			if (menuResponse.equals("0")){
+				System.out.println("Exiting to Bank Menu.");
+				keepGoing = false;
+			} //End exit admin condition
+			
+			else if (menuResponse.equals("1")){
+				System.out.println("Printing Full Customer Report.");
+				this.fullCustomerReport();
+			} //Customer report condition
+
+			else if (menuResponse.equals("2")){
+				System.out.println("Adding user.");
+				this.addUser();
+			} //Add user condition
+
+			else if (menuResponse.equals("3")){
+				System.out.println("Adding interest to savings accounts.");
+			} //Add interest condition
+		} //End while loop
+	} //End startAdmin()
+	
+	public void addUser(){
+		java.util.Scanner userInput = new java.util.Scanner(System.in);
+		String userName;
+		String PIN;
+
+		System.out.print("New User Username: ");
+		userName = userInput.nextLine();
+
+		System.out.print("New User PIN: ");
+		PIN = userInput.nextLine();
+		
+		customers.add(new Customer(userName, PIN));
+	} //End addUser()
+
+	public void fullCustomerReport(){
+		Iterator<Customer> it = customers.iterator();
+
+		while (it.hasNext()){
+			Customer currentCustomer = it.next();
+			System.out.println(currentCustomer.getReport());
+		} 
+	} //End fullCustomerReport()
+
+
 
 } //End class def
