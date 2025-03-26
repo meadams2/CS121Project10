@@ -29,7 +29,7 @@ public abstract class User implements HasMenu {
 			if (sPIN.matches("^\\d{4}$")){
 				if (sPIN.equals(PIN)){
 					login = true;
-					System.out.println("Login Successful");
+//					System.out.println("Login Successful");
 				} //Correct PIN
 				else {
 					System.out.println("Incorrect PIN");
@@ -53,7 +53,7 @@ public abstract class User implements HasMenu {
 		if (userName.equals(userName)){
 			if(PIN.equals(PIN)){
 				login = true;
-				System.out.println("Login Successful");
+//				System.out.println("Login Successful");
 			} //Correct PIN
 			else {
 				login = false;

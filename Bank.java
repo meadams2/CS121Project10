@@ -57,6 +57,7 @@ class Bank implements HasMenu {
 
 			if(menuInput.equals("2")){
 				System.out.println("Logging in as customer.");
+				this.loginAsCustomer();
 			} //End login as customer condition
 		} //End while loop
 	} //End start()
@@ -132,6 +133,27 @@ class Bank implements HasMenu {
 			//Testing harness to check if calcInterest() working in this scope
 		} //End while loop
 	} //End applyInterest()
+	
+	public void loginAsCustomer(){
+		java.util.Scanner customerInput = new java.util.Scanner(System.in);
+		Customer currentCustomer = null;
 
+		System.out.print("Username: ");
+		String userName = customerInput.nextLine();
+
+		System.out.print("PIN: ");
+		String PIN = customerInput.nextLine();
+		
+		Iterator<Customer> it = customers.iterator();
+		while(it.hasNext()){
+			Customer iterCustomer = it.next();
+			if (iterCustomer.login(userName, PIN)){
+				currentCustomer = iterCustomer;
+				currentCustomer.start();
+				return; //Exit after successful login
+			} //User found condition
+		} //End while
+		System.out.println("No user found.");
+	} //End loginAsCustomer()
 
 } //End class def
