@@ -18,9 +18,9 @@ class Customer extends User {
 	} //End main
 
 	public Customer(){
-		super("Alice", "0000");
-		this.userName = userName;
-		this.PIN = PIN;
+		super("", "");
+		this.userName = "";
+		this.PIN = "";
 		this.checking = new CheckingAccount(1000d);
 		this.savings = new SavingsAccount(1000d, 5);
 	} //end constructor
