@@ -92,6 +92,7 @@ class Bank implements HasMenu {
 
 			else if (menuResponse.equals("3")){
 				System.out.println("Adding interest to savings accounts.");
+				this.applyInterest();
 			} //Add interest condition
 		} //End while loop
 	} //End startAdmin()
@@ -121,7 +122,16 @@ class Bank implements HasMenu {
 			System.out.println(currentCustomer.getReport());
 		} 
 	} //End fullCustomerReport()
-
+	
+	public void applyInterest(){
+		Iterator<Customer> it = customers.iterator();
+		while (it.hasNext()){
+			Customer currentCustomer = it.next();
+			currentCustomer.savings.calcInterest();
+			//System.out.println("New Balance: " + currentCustomer.savings.getBalance());
+			//Testing harness to check if calcInterest() working in this scope
+		} //End while loop
+	} //End applyInterest()
 
 
 } //End class def
