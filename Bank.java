@@ -149,13 +149,19 @@ class Bank implements HasMenu {
 			Customer iterCustomer = it.next();
 			if (iterCustomer.login(userName, PIN)){
 				currentCustomer = iterCustomer;
-				currentCustomer.start();
-				return; //Exit after successful login
+			//	currentCustomer.start();
 			} //User found condition
 			else {
-				System.out.println("No user found.");
-			} 
+				currentCustomer = null;
+			}	
 		} //End while
+		
+		if(currentCustomer == null){
+			System.out.println("No user found.");
+		}
+		else {
+			currentCustomer.start();
+		} 
 	} //End loginAsCustomer()
 
 } //End class def
