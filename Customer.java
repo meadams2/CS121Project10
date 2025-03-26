@@ -50,7 +50,7 @@ class Customer extends User {
 	} //End menu()
 
 	public void start(){
-	//	if (login()){
+		if (login()){
 			boolean keepGoing = true;
 			while(keepGoing){
 				String menuInput = this.menu();
@@ -73,12 +73,12 @@ class Customer extends User {
 					System.out.println("Invalid Input");
 				} //User is an idiot condition
 			} //End while loop
-	//	} //End login condition
-		/*
+		} //End login condition
+		
 		else {
 			System.out.println("Please login.");
 		} //End else	
-				*/
+				
 	} //End start()
 
 	public void changePIN(){

@@ -139,29 +139,37 @@ class Bank implements HasMenu {
 		Customer currentCustomer = null;
 
 		System.out.print("Username: ");
-		String userName = customerInput.nextLine();
+		String sUserName = customerInput.nextLine();
 
 		System.out.print("PIN: ");
-		String PIN = customerInput.nextLine();
+		String sPIN = customerInput.nextLine();
 		
 		Iterator<Customer> it = customers.iterator();
+		Customer iterCustomer;
+
 		while(it.hasNext()){
-			Customer iterCustomer = it.next();
-			if (iterCustomer.login(userName, PIN)){
+			iterCustomer = it.next();
+			if (iterCustomer.login(sUserName, sPIN)){
+				System.out.println(iterCustomer.login(sUserName, sPIN));
 				currentCustomer = iterCustomer;
+				return;
 			//	currentCustomer.start();
 			} //User found condition
+/*
 			else {
 				currentCustomer = null;
 			}	
+			*/
 		} //End while
 		
 		if(currentCustomer == null){
 			System.out.println("No user found.");
 		}
+		/*
 		else {
 			currentCustomer.start();
 		} 
+*/
 	} //End loginAsCustomer()
 
 } //End class def
