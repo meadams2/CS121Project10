@@ -1,11 +1,12 @@
 //User.java
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-public abstract class User implements HasMenu {
+public abstract class User implements HasMenu, Serializable {
 	protected String userName = "";
 	protected String PIN = "";
-	java.util.Scanner input = new java.util.Scanner(System.in);	
+//	java.util.Scanner input = new java.util.Scanner(System.in);	
 	public User(){
 		this.userName = "";
 		this.PIN = "";
@@ -17,13 +18,14 @@ public abstract class User implements HasMenu {
 	} //End dual parameter constructor
 		
 	public boolean login(){
+		java.util.Scanner loginInput = new java.util.Scanner(System.in);
 		boolean login; 
 		String sUsername;
 		String sPIN;
 		System.out.print("Username: ");
-		sUsername = input.nextLine();
+		sUsername = loginInput.nextLine();
 		System.out.print("PIN: ");
-		sPIN = input.nextLine();
+		sPIN = loginInput.nextLine();
 
 		if (sUsername.equalsIgnoreCase(userName)){
 			if (sPIN.matches("^\\d{4}$")){
@@ -68,6 +70,7 @@ public abstract class User implements HasMenu {
 	} //End login(userName, PIN)
 	
 	public String menu(){
+		java.util.Scanner menuInput = new java.util.Scanner(System.in);
 		String menuResponse;
 
 		System.out.println("0) Exit");
@@ -76,7 +79,7 @@ public abstract class User implements HasMenu {
 		System.out.println("3) Change PIN");
 		System.out.print("Action (0-3):");
 		
-		menuResponse = input.nextLine();
+		menuResponse = menuInput.nextLine();
 
 		return menuResponse;
 	} //End menu()
