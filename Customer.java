@@ -6,6 +6,7 @@ import java.io.*;
 class Customer extends User {
 //	CheckingAccount checking = new CheckingAccount(100d);
 //	SavingsAccount savings = new SavingsAccount(100d, 0.02);
+	private static final long serialVersionUID = 1L;
 	protected String userName;
 	protected String PIN;
 	protected CheckingAccount checking;

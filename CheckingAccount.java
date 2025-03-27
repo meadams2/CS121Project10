@@ -1,10 +1,13 @@
 //CheckingAccount.java
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-public class CheckingAccount implements HasMenu{
+public class CheckingAccount implements HasMenu, Serializable{
+	private static final long serialVersionUID = 1L;
+
 	double balance;
-	private static final java.util.Scanner input = new java.util.Scanner(System.in);
+//	private static final java.util.Scanner input = new java.util.Scanner(System.in);
 
 	//Create constructors
 	
@@ -21,13 +24,14 @@ public class CheckingAccount implements HasMenu{
 	//Implementing methods of HasMenu
 	
 	public String menu(){
+		java.util.Scanner menuInput = new java.util.Scanner(System.in);
 		System.out.println("0) Quit");
 		System.out.println("1) Check balance");
 		System.out.println("2) Make a deposit");
 		System.out.println("3) Make a withdrawal");
 		System.out.print("Please enter 0-3: ");
 
-		String checkingResponse = input.nextLine();
+		String checkingResponse = menuInput.nextLine();
 		return checkingResponse;
 	} //end menu
 
@@ -67,7 +71,8 @@ public class CheckingAccount implements HasMenu{
 	} //end getBalanceString
 	
 	public double getDouble(){
-		String sResult = input.nextLine();
+		java.util.Scanner doubleInput = new java.util.Scanner(System.in);
+		String sResult = doubleInput.nextLine();
 		double result;
 		try {
 			result = Double.parseDouble(sResult);

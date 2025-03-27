@@ -3,7 +3,8 @@
 import java.util.*;
 import java.io.*;
 
-class Bank implements HasMenu {
+class Bank implements HasMenu, Serializable {
+	private static final long serialVersionUID = 1L;
 	protected Admin admin = new Admin();
 //	private ArrayList<Customer> customers = new ArrayList<Customer>();
 	

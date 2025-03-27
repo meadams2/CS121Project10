@@ -3,7 +3,8 @@
 import java.util.*;
 import java.io.*;
 
-class SavingsAccount extends CheckingAccount{
+class SavingsAccount extends CheckingAccount implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private double interestRate;
 
 	public static void main(String[] args){
