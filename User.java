@@ -50,8 +50,8 @@ public abstract class User implements HasMenu {
 
 	public boolean login(String userName, String PIN){
 		boolean login;
-		if (userName.equals(userName)){
-			if(PIN.equals(PIN)){
+		if (userName.equals(this.userName)){
+			if(PIN.equals(this.PIN)){
 				login = true;
 //				System.out.println("Login Successful");
 			} //Correct PIN
