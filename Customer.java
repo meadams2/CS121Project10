@@ -1,6 +1,7 @@
 //Customer.java
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 class Customer extends User {
 //	CheckingAccount checking = new CheckingAccount(100d);
@@ -10,7 +11,7 @@ class Customer extends User {
 	protected CheckingAccount checking;
 	protected SavingsAccount savings;
 	
-	java.util.Scanner input = new java.util.Scanner(System.in);
+//	java.util.Scanner input = new java.util.Scanner(System.in);
 
 	public static void main(String[] args){
 		Customer alice = new Customer("Alice", "0000");
@@ -37,6 +38,7 @@ class Customer extends User {
 	
 	@Override
 	public String menu(){
+		java.util.Scanner menuInput = new java.util.Scanner(System.in);
 		String menuResponse;
 
 		System.out.println("0) Exit");
@@ -45,7 +47,7 @@ class Customer extends User {
 		System.out.println("3) Change PIN");
 		System.out.print("Action (0-3): ");
 
-		menuResponse = input.nextLine();
+		menuResponse = menuInput.nextLine();
 		return menuResponse;
 	} //End menu()
 
@@ -82,9 +84,10 @@ class Customer extends User {
 	} //End start()
 
 	public void changePIN(){
+		java.util.Scanner PINinput = new java.util.Scanner(System.in);
 		String pinResponse;
 		System.out.println("New PIN: ");
-		pinResponse = input.nextLine();
+		pinResponse = PINinput.nextLine();
 		if(pinResponse.matches("^\\d{4}$")){
 			setPIN(pinResponse);
 			System.out.println("PIN Changed!");
