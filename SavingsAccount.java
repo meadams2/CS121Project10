@@ -1,6 +1,7 @@
 //SavingsAccount.java
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 class SavingsAccount extends CheckingAccount{
 	private double interestRate;

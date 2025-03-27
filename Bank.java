@@ -12,11 +12,14 @@ class Bank implements HasMenu {
 
 	public static void main(String[] args){
 		Bank wellsFargo = new Bank();
-		wellsFargo.start();
+	//	wellsFargo.start();
 	} //End main()
 
 	public Bank(){
 		this.loadSampleCustomers();
+		this.saveCustomers();
+		this.loadCustomers();
+		this.start();
 		this.saveCustomers();
 	} //End constructor
 
@@ -69,8 +72,28 @@ class Bank implements HasMenu {
 	} //End loadSampleCustomers()
 
 	public void saveCustomers(){
+		try {
+			FileOutputStream fo = new FileOutputStream("customerArray.dat");
+			ObjectOutputStream obOut = new ObjectOutputStream(fo);
+			obOut.writeObject(customers);
+			obOut.close();
+			fo.close();
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+		} //End try
+	} //End saveCustomers()
 
-	}
+	public void loadCustomers(){
+		try {
+			FileInputStream fIn = new FileInputStream("customerArray.dat");
+			ObjectInputStream obIn = new ObjectInputStream(fIn);
+			customers = (CustomerList)obIn.readObject();
+			obIn.close();
+			fIn.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} //End try
+	} //End loadCustomers()
 
 	public void startAdmin(){
 		boolean keepGoing = true;
