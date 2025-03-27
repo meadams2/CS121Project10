@@ -32,6 +32,8 @@ Waits for user input and stores in menuResponse. Returns menuResponse.
 
 ### Void start()
 
+Is an empty method. 
+
 ## Bank Class
 ```
 class Bank implements HasMenu
@@ -74,6 +76,17 @@ Assign the current iteration of the iterator to currentCustomer.
 Call currentCustomer.savings.calcInterest().
 ```
 ### void loginAsCustomer()
+
+Ran into an issue with User class login(userName, PIN). I was saying
+```
+If userName == userName:
+    login = true
+```
+which is always true. I fixed it to be:
+```
+if this.userName == userName:
+    login = true
+```
 
 ### void startAdmin()
 
